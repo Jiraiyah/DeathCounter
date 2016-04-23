@@ -5,7 +5,7 @@ import jiraiyah.deathcounter.references.Reference;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Reference.MOD_ID, version = Reference.VERSION, dependencies = Reference.DEPENDENCIES, name = Reference.MOD_NAME)
 public class DeathCounter
@@ -14,7 +14,8 @@ public class DeathCounter
     public static CommonProxy PROXY;
     
     @EventHandler
-    public void init(FMLInitializationEvent event)
+    public void preInit(FMLPreInitializationEvent event)
     {
+        PROXY.preInit(event);
     }
 }

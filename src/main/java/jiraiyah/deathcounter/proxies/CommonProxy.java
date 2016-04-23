@@ -1,5 +1,6 @@
 package jiraiyah.deathcounter.proxies;
 
+import jiraiyah.deathcounter.CommonEventRegister;
 import jiraiyah.deathcounter.interfaces.IProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -11,7 +12,7 @@ public class CommonProxy implements IProxy
 	@Override
 	public void preInit(FMLPreInitializationEvent event)
 	{
-
+		CommonEventRegister.register();
 	}
 
 	@Override
