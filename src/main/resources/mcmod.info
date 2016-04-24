@@ -5,7 +5,7 @@
   "description": "A mod that will add death counts in score board like what you see in hermit craft server.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "http://minecraft.curseforge.com/projects/deathcounter",
   "updateUrl": "",
   "authorList": ["Jiraiyah"],
   "credits": "To many people in minecraft forge irc that helped me figure how to make this work, TehNut, tterrag, gigaherz, masa and many others.",
