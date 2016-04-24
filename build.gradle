@@ -55,8 +55,7 @@ curseforge {
 //********************************************************************************************************************************
 apply plugin: 'license'
 
-license
-        {
+license {
             ext.name = project.name
             ext.organization = project.organization
             ext.url = project.url
@@ -90,8 +89,7 @@ targetCompatibility = '1.8'
 group= "${group}"
 archivesBaseName = "${name}"
 
-minecraft
-        {
+minecraft {
             version = minecraft_version + '-' + forge_version
             runDir = 'run'
             mappings = project.mappings
@@ -111,26 +109,21 @@ minecraft
 //************************************************************ RESOURCES *********************************************************
 //********************************************************************************************************************************
 
-processResources
-        {
-            inputs.property "version", project.version
-            inputs.property "mcversion", minecraft_version
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", minecraft_version
 
-            from(sourceSets.main.resources.srcDirs)
-                    {
-                        include '**/*.info'
-                        include '**/*.properties'
+    from(sourceSets.main.resources.srcDirs)
+    {
+        include '**/*.info'
+        include '**/*.properties'
 
-                        expand ([
-                                'mod_version': project.version,
-                                'forge_version': forge_version,
-                                'minecraft_version': minecraft_version,
-                        ])
-                    }
+        expand 'version': project.version, 'mcversion': minecraft_version
+    }
 
-            from(sourceSets.main.resources.srcDirs)
-                    {
-                        exclude '**/*.info'
-                        exclude '**/*.properties'
-                    }
-        }
+    from(sourceSets.main.resources.srcDirs)
+            {
+                exclude '**/*.info'
+                exclude '**/*.properties'
+            }
+}
